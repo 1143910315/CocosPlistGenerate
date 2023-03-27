@@ -33,6 +33,13 @@ Window {
     Image {
         id: mainImage
         anchors.fill: parent
+        //sourceSize: {
+        //    width: parent.width
+        //    height: parent.height
+        //}
+        fillMode: {
+            Image.PreserveAspectFit
+        }
     }
     function loadImage(path) {
         mainImage.source = path
