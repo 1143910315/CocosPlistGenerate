@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Window
 import QtQuick.Layouts
+import PlistManageItem
 
 Window {
     width: 640
@@ -38,6 +39,7 @@ Window {
         anchors.bottom: parent.bottom
         color: "red"
     }
+
     Rectangle {
 
         anchors.left: leftLayout.right

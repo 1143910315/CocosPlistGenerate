@@ -4,6 +4,8 @@
 #include <QLocale>
 #include <QTranslator>
 
+#include "plistmanageitem.h"
+
 int main(int argc, char *argv[]) {
     QGuiApplication app(argc, argv);
 
@@ -16,6 +18,8 @@ int main(int argc, char *argv[]) {
             break;
         }
     }
+
+    qmlRegisterType<PlistManageItem>("PlistManageItem", 1, 0, "PlistManageItem");
 
     QQmlApplicationEngine engine;
     const QUrl url(u"qrc:/CocosPlistGenerate/main.qml"_qs);
