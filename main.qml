@@ -19,15 +19,15 @@ Window {
     //}
     DropArea {
         anchors.fill: parent
-        onEntered: {
+        onEntered: function () {
             console.log("File Entered.")
         }
-        onExited: {
+        onExited: function () {
             console.log("File exited.")
         }
-        onDropped: {
+        onDropped: function (drop) {
             console.log("File dropped: " + drop.text)
-            loadImage(drop.text)
+            mainImage.source = drop.text
         }
     }
 
@@ -65,9 +65,5 @@ Window {
         anchors.bottom: parent.bottom
         anchors.right: parent.right
         color: "blue"
-    }
-
-    function loadImage(path) {
-        mainImage.source = path
     }
 }
