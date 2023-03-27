@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Window
 import QtQuick.Layouts
+import QtQuick.Controls
 import PlistManageItem
 
 Window {
@@ -18,6 +19,10 @@ Window {
     //onDropped:{
 
     //}
+    PlistManageItem {
+        id: plistClass
+    }
+
     DropArea {
         anchors.fill: parent
         onEntered: function () {
@@ -38,6 +43,15 @@ Window {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         color: "red"
+        Button {
+            id: myButton
+            text: "Click me!"
+            anchors.centerIn: parent
+
+            onClicked: function () {
+                plistClass.writePlist("test.plist")
+            }
+        }
     }
 
     Rectangle {

@@ -17,11 +17,13 @@ void PlistManageItem::writePlist(const QString &fileName) {
     writer.setAutoFormatting(true);
 
     writer.writeStartDocument();
-    writer.writeStartElement("root");
-
-    // Write your XML data here
-
-    writer.writeEndElement();
+    writer.writeDTD("<!DOCTYPE plist PUBLIC \"-//Apple Computer//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">");
+    writer.writeStartElement("plist");
+    writer.writeAttribute("version", "1.0");
+    writer.writeStartElement("dict");
+    // Write your data here
+    writer.writeEndElement(); // End dict
+    writer.writeEndElement(); // End plist
     writer.writeEndDocument();
 
     file.close();
