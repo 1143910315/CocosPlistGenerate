@@ -1,7 +1,6 @@
 #include "plistmanageitem.h"
 #include <QFile>
 #include <QXmlStreamReader>
-#include <QXmlStreamWriter>
 
 PlistManageItem::PlistManageItem(QQuickItem *parent)
     : QQuickItem{parent} {
@@ -21,7 +20,7 @@ void PlistManageItem::writePlist(const QString &fileName) {
     writer.writeStartElement("plist");
     writer.writeAttribute("version", "1.0");
     writer.writeStartElement("dict");
-    // Write your data here
+
     writer.writeEndElement(); // End dict
     writer.writeEndElement(); // End plist
     writer.writeEndDocument();

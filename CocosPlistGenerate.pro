@@ -2,7 +2,8 @@ QT += quick
 
 SOURCES += \
         main.cpp \
-        plistmanageitem.cpp
+        plistmanageitem.cpp \
+        spriteitem.cpp
 
 resources.files = main.qml 
 resources.prefix = /$${TARGET}
@@ -25,4 +26,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    plistmanageitem.h
+    plistmanageitem.h \
+    spriteitem.h

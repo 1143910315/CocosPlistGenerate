@@ -2,6 +2,7 @@
 #define PLISTMANAGEITEM_H
 
 #include <QQuickItem>
+#include "spriteitem.h"
 
 class PlistManageItem : public QQuickItem {
     Q_OBJECT
