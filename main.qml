@@ -7,6 +7,7 @@ Window {
     height: 480
     visible: true
     title: qsTr("Cocos Plist Generate")
+    id: win
 
     //Drag.active: true
     //Drop.active: true
@@ -31,17 +32,18 @@ Window {
         }
     }
     RowLayout {
-        spacing: 10
-        anchors.fill: parent
+        spacing: 0
+        width: parent.width
+        height: win.height
 
         Rectangle {
             width: 100
-            height: 50
+            height: parent.height
             color: "red"
         }
         Rectangle {
             RowLayout.fillWidth: true
-            height: 50
+            height: parent.height
 
             Image {
                 id: mainImage
@@ -57,7 +59,7 @@ Window {
 
         Rectangle {
             width: 100
-            height: 50
+            height: parent.height
             color: "blue"
         }
     }
