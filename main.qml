@@ -30,42 +30,41 @@ Window {
             loadImage(drop.text)
         }
     }
-    RowLayout {
-        id: container
-        spacing: 0
-        width: parent.width
+
+    Rectangle {
+        id: leftLayout
+        width: 100
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        color: "red"
+    }
+    Rectangle {
+
+        anchors.left: leftLayout.right
+        anchors.right: rightLayout.left
+
         anchors.top: parent.top
         anchors.bottom: parent.bottom
 
-        Rectangle {
-            width: 100
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
-            color: "red"
-        }
-        Rectangle {
-            RowLayout.fillWidth: true
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
+        Image {
+            id: mainImage
 
-            Image {
-                id: mainImage
-
-                anchors.fill: parent
-                //sourceSize: {
-                //    width: parent.width
-                //    height: parent.height
-                //}
-                fillMode: Image.PreserveAspectFit
-            }
+            anchors.fill: parent
+            //sourceSize: {
+            //    width: parent.width
+            //    height: parent.height
+            //}
+            fillMode: Image.PreserveAspectFit
         }
+    }
 
-        Rectangle {
-            width: 100
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
-            color: "blue"
-        }
+    Rectangle {
+        id: rightLayout
+        width: 100
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
+        anchors.right: parent.right
+        color: "blue"
     }
 
     function loadImage(path) {
