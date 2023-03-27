@@ -37,9 +37,7 @@ Window {
         //    width: parent.width
         //    height: parent.height
         //}
-        fillMode: {
-            Image.PreserveAspectFit
-        }
+        fillMode: Image.PreserveAspectFit
     }
     function loadImage(path) {
         mainImage.source = path
