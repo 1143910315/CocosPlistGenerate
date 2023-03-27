@@ -1,13 +1,12 @@
-import QtQuick 2.15
-import QtQuick.Window 2.15
-import QtQuick.Layouts 1.3
+import QtQuick
+import QtQuick.Window
+import QtQuick.Layouts
 
 Window {
     width: 640
     height: 480
     visible: true
     title: qsTr("Cocos Plist Generate")
-    id: win
 
     //Drag.active: true
     //Drop.active: true
@@ -32,18 +31,22 @@ Window {
         }
     }
     RowLayout {
+        id: container
         spacing: 0
         width: parent.width
-        height: win.height
+        anchors.top: parent.top
+        anchors.bottom: parent.bottom
 
         Rectangle {
             width: 100
-            height: parent.height
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
             color: "red"
         }
         Rectangle {
             RowLayout.fillWidth: true
-            height: parent.height
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
 
             Image {
                 id: mainImage
@@ -59,7 +62,8 @@ Window {
 
         Rectangle {
             width: 100
-            height: parent.height
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
             color: "blue"
         }
     }
