@@ -14,6 +14,9 @@ public:
     void write(QXmlStreamWriter &writer);
 signals:
 private:
+    QString toString(const QPointF& point);
+    QString toString(const QPoint& point);
+    QString toString(const QPoint point[], int size);
     /**
        - aliases：该小图的别名
        - anchor：该小图的中心点相对于小图左下角的坐标比例，范围为（0，0）到（1，1）。例如，一个值为（0.5，0.5）的anchor表示该小图的中心点位于小图的正中心。
